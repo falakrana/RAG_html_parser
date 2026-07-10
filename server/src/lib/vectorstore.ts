@@ -1,13 +1,16 @@
-import { ChromaClient, Collection, IEmbeddingFunction } from 'chromadb';
+import { ChromaClient, CloudClient, Collection, IEmbeddingFunction } from 'chromadb';
 import { embedTexts } from './embedder';
 import 'dotenv/config';
 
-const host = process.env.CHROMA_HOST || 'localhost';
-const port = process.env.CHROMA_PORT || '8000';
-
-const client = new ChromaClient({
-  path: `http://${host}:${port}`
-});
+const client = process.env.CHROMA_API_KEY
+  ? new CloudClient({
+      apiKey: process.env.CHROMA_API_KEY,
+      tenant: process.env.CHROMA_TENANT || '',
+      database: process.env.CHROMA_DATABASE || '',
+    })
+  : new ChromaClient({
+      path: `http://${process.env.CHROMA_HOST || 'localhost'}:${process.env.CHROMA_PORT || '8000'}`
+    });
 
 /**
  * Custom embedding function wrapper implementing ChromaDB's IEmbeddingFunction.

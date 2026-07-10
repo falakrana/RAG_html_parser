@@ -47,6 +47,7 @@ Start your local vector database server:
 ```bash
 C:\Users\<User-name>\AppData\Roaming\Python\Python313\Scripts\chroma.exe run --host localhost --port 8000
 ```
+Although it is connected to chromadb cloud, so you can continue as it is too.
 
 #### Terminal 2 — Backend Express Server
 

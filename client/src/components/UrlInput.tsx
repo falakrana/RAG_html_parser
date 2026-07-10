@@ -119,6 +119,28 @@ export const UrlInput: React.FC<UrlInputProps> = ({
             >
               Crawl & Index Website
             </button>
+
+            {/* HTML-only disclaimer */}
+            <div className="flex items-start gap-2.5 mt-2 px-3 py-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-left">
+              <svg
+                className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z"
+                />
+              </svg>
+              <p className="text-xs text-amber-300/80 leading-relaxed">
+                <span className="font-semibold text-amber-300">HTML-only websites supported.</span>{' '}
+                Pages that rely on JavaScript to render content (e.g. React, Vue, Angular SPAs) cannot be crawled.
+              </p>
+            </div>
           </form>
         </div>
       </div>
