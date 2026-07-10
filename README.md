@@ -40,6 +40,12 @@ PORT=3001
 
 You will need three terminal tabs/sessions:
 
+### Dummy document's link:
+
+- https://example.com/
+- https://paulgraham.com/articles.html
+- https://news.ycombinator.com/
+
 #### Terminal 1 — ChromaDB Server
 
 Start your local vector database server:
